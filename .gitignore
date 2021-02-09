@@ -8,7 +8,7 @@ __pycache__
 
 # virtualenv
 .venv/
-venv/
+**venv**
 
 # PyCharm
 .idea
