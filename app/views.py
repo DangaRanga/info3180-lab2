@@ -4,8 +4,13 @@ Jinja2 Documentation:    http://jinja.pocoo.org/2/documentation/
 Werkzeug Documentation:  http://werkzeug.pocoo.org/documentation/
 This file creates your application.
 """
+# Standard imports
+import datetime
 
+# User module imports
 from app import app
+
+# Flask imports
 from flask import render_template, request, redirect, url_for, flash
 
 
@@ -28,7 +33,8 @@ def about():
 @app.route('/profile')
 def profile():
     """Render the website's profile page."""
-    return render_template('profile.html')
+    join_date = format_date_joined(2021, 1, 3)
+    return render_template('profile.html', join_date=join_date)
 
 ###
 # The functions below should be applicable to all Flask apps.
@@ -57,6 +63,14 @@ def add_header(response):
 def page_not_found(error):
     """Custom 404 page."""
     return render_template('404.html'), 404
+
+# Utility functions
+
+
+def format_date_joined(year, month, day):
+    """Format the join date."""
+    date_obj = datetime.datetime(year, month, day)
+    return date_obj.strftime('%B, %Y')
 
 
 if __name__ == '__main__':

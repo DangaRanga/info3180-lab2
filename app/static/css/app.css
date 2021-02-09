@@ -75,7 +75,7 @@ body {
 
 #follow {
   border: none;
-  background-color: #69f044;
+  background-color: #222222;
   padding: 5px 30px;
   border-radius: 10px;
   color: #ffff;
@@ -84,6 +84,5 @@ body {
 }
 
 #follow:hover {
-  background-color: #aceb98;
-  color: #222222;
+  background-color: #414141;
 }
